@@ -5,8 +5,16 @@
 </div>
 <form #registerForm="ngForm" (ngSubmit)="registerNewUser()">
   <div class="form-group">
+    <label for="firstName">Ime</label>
+    <input [(ngModel)]="model.firstName" type="text" class="form-control" #firstName="ngModel" name="firstName">
+  </div>
+  <div class="form-group">
+    <label for="lastName">Priimek</label>
+    <input [(ngModel)]="model.lastName" type="text" class="form-control" #lastName="ngModel" name="lastName">
+  </div>
+  <div class="form-group">
     <label for="email">Email</label>
-    <input [(ngModel)]="model.email" type="email" class="form-control" #email="ngModel" name="email" required>
+    <input [(ngModel)]="model.email" type="email" class="form-control" #email="ngModel" name="email" required email>
     <div [hidden]="email.valid || email.pristine" class="alert alert-danger">Email je obvezen.</div>
   </div>
   <div class="form-group">
@@ -16,8 +24,8 @@
   </div>
   <div class="form-group">
     <label for="password">Geslo</label>
-    <input [(ngModel)]="model.password" type="password" class="form-control" #password="ngModel" name="password" required>
-    <div [hidden]="password.valid || password.pristine" class="alert alert-danger">Geslo je obvezno.</div>
+    <input [(ngModel)]="model.password" type="password" class="form-control" #password="ngModel" name="password" required minlength="8">
+    <div [hidden]="password.valid || password.pristine" class="alert alert-danger">Geslo je obvezno in mora biti dolgo vsaj 8 znakov.</div>
   </div>
   <div class="col-lg-12 popup-main">
   <button type="submit" class="btn btn-success" [disabled]="!registerForm.form.valid">Registriraj se</button>

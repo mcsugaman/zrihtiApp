@@ -19,6 +19,7 @@ import {AlertModule} from 'ngx-bootstrap';
 import {UserAccountService} from './services/accountServices/userAccount.service';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { ConfirmMailComponent } from './confirm-mail/confirm-mail.component';
+import { RenewPasswordComponent } from './renew-password/renew-password.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ConfirmMailComponent } from './confirm-mail/confirm-mail.component';
     ContactComponent,
     UserLoginStatusComponent,
     RegisterUserComponent,
-    ConfirmMailComponent
+    ConfirmMailComponent,
+    RenewPasswordComponent
   ],
   imports: [
     BrowserModule,

@@ -27,6 +27,10 @@ export class UserLoginStatusComponent implements OnInit {
 
   model:any = {};
 
+  modelForgottenPassword: any = {};
+
+  forgottenPasswordStatus: string;
+
   constructor(private router: Router, private modalService: BsModalService,  private userAccountService: UserAccountService) 
   {
 
@@ -74,6 +78,29 @@ export class UserLoginStatusComponent implements OnInit {
   RegisterNewUser(template: TemplateRef<any>){
   this.modalRef.hide();
   this.router.navigate(['/registerNewUser']);
+  }
+
+  ForgottenPassword(template: TemplateRef<any>){
+    this.modalRef.hide();
+    this.modalRef = this.modalService.show(template);
+    
+  }
+
+  retrieveForgottenPassword(){
+    //this.modalRef.hide();
+    this.userAccountService
+      .retrieveForgottenPassword(this.modelForgottenPassword.email)
+      .then(result => {
+        if(result === "Success1"){
+          this.forgottenPasswordStatus = "Na vaš elektronski naslov smo vam poslali obnovitveno povezavo za vaše geslo.";
+        }else if(result ==="Error2"){
+          this.forgottenPasswordStatus = "Prišlo je do napake pri pošiljanju potrditvenega sporočila. Obrnite se na skrbnika strani."
+        }else if(result === "Error1"){
+          this.forgottenPasswordStatus = "Uporabnik s tem elektronskim naslovom ne obstaja.";
+        }else {
+          this.forgottenPasswordStatus = "Prišlo je do neznane napake. Obrnite se na skrbnika strani.";
+        }
+      });
   }
 
 

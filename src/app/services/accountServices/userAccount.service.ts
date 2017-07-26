@@ -68,9 +68,11 @@ export class UserAccountService{
     }
 
 
-    registerNewUser(email: string, username:string, password:string) {
+    registerNewUser(firstName:string, lastName:string, email: string, username:string, password:string) {
     var response;
     let params: URLSearchParams = new URLSearchParams();
+    params.append('firstName', firstName);
+    params.append('lastName', lastName);
     params.append('email', email);
     params.append('username', username);
     params.append('password', password);
@@ -90,6 +92,23 @@ export class UserAccountService{
         return this.http.post(this.appSettings.serviceUrl + 'AccountApi/confirmMail', params)
                     .toPromise()
                     .then((response) => response.text().toString());
+    }
+
+    retrieveForgottenPassword(email: string){
+        let params: URLSearchParams = new URLSearchParams();
+        params.append('email', email);
+        return this.http.post(this.appSettings.serviceUrl + 'AccountApi/retrieveForgottenPassword', params)
+                        .toPromise()
+                        .then((response) => response.text().toString());
+    }
+
+    renewPassword(email:string, password:string){
+        let params: URLSearchParams = new URLSearchParams();
+        params.append('email', email);
+        params.append('password', password);
+        return this.http.post(this.appSettings.serviceUrl + 'AccountApi/renewPassword', params)
+                        .toPromise()
+                        .then((response) => response.text().toString());
     }
 
 

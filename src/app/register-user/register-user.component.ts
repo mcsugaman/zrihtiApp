@@ -29,7 +29,7 @@ export class RegisterUserComponent implements OnInit {
 registerNewUser()
 {
   this.userAccountService
-      .registerNewUser(this.model.email, this.model.username, this.model.password)
+      .registerNewUser(this.model.firstName, this.model.lastName, this.model.email, this.model.username, this.model.password)
       .then(result => {
         if(result === "Success1"){
           this.userRegisterStatus = "Uspešno ste se registrirali. Poslali smo vam potrditveno sporočilo na vaš elektronski naslov.";

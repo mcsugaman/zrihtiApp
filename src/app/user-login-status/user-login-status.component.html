@@ -22,7 +22,7 @@
     <div class="col-lg-4"></div>
     <div class="col-lg-4">
       <div class="popup-main top-padding">
-        <label>Upor. ime:</label>
+        <label>Email:</label>
       </div>
       <input [(ngModel)]="model.username" type="text" class="form-control"/>
       <div class="popup-main top-padding">
@@ -36,10 +36,39 @@
         <p>{{error}}</p>   
       </div>
       <div class="popup-main top-padding">
+        <a (click)="ForgottenPassword(modalForgottenPassword)" class="link-cursor">Pozabljeno geslo?</a>    
+      </div>
+      <div class="popup-main top-padding">
         <a (click)="RegisterNewUser(modalLogin)" class="link-cursor">Še nimate računa?</a>    
       </div>
     </div>
     <div class="col-lg-4"></div>
   </div>
+  </div>
+ </ng-template>
+
+ <ng-template #modalForgottenPassword>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Pozabljeno geslo</h4>
+    <button type="button" class="close pull-right" aria-label="Zapri" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #forgottenPassword="ngForm" (ngSubmit)="retrieveForgottenPassword()">
+      <div class="form-group">
+        <label for="forgottenPasswordEmail">Email</label>
+        <input [(ngModel)]="modelForgottenPassword.email" type="email" class="form-control" #forgottenPasswordEmail="ngModel" name="forgottenPasswordEmail" required email>
+        <div [hidden]="forgottenPasswordEmail.valid || forgottenPasswordEmail.pristine" class="alert alert-danger">Email je obvezen.</div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success" [disabled]="!forgottenPassword.form.valid">Spremeni geslo</button>
+      </div>
+    </form>
+    <div class="form-group">
+      <div class="col-lg-12 popup-main top-padding">
+        <div [hidden]="forgottenPasswordStatus == null" class="alert alert-danger">{{forgottenPasswordStatus}}</div>
+      </div>
+    </div>
   </div>
  </ng-template>
