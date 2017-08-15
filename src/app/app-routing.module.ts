@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import {AuthGuard} from './services/accountServices/auth.guard';
+
 import {HomeComponent} from './home/home.component';
 import {ContactComponent} from './contact/contact.component';
 import {RegisterUserComponent} from './register-user/register-user.component';
@@ -9,7 +11,7 @@ import {RenewPasswordComponent} from './renew-password/renew-password.component'
  
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'contact', component: ContactComponent},
+  { path: 'contact', component: ContactComponent, canActivate: [AuthGuard]},
   { path: 'registerNewUser', component: RegisterUserComponent },
   { path: 'confirmMail/:email/:hash', component: ConfirmMailComponent },
   { path: 'renewPassword/:email/:hash', component: RenewPasswordComponent},

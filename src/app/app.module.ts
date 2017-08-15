@@ -15,11 +15,13 @@ import { UserLoginStatusComponent } from './user-login-status/user-login-status.
 import { AuthGuard} from './services/accountServices/auth.guard';
 
 import {AlertModule} from 'ngx-bootstrap';
+import {CollapseModule} from 'ngx-bootstrap';
 
 import {UserAccountService} from './services/accountServices/userAccount.service';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { ConfirmMailComponent } from './confirm-mail/confirm-mail.component';
 import { RenewPasswordComponent } from './renew-password/renew-password.component';
+import { SearchFiltersComponent } from './search-filters/search-filters.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +31,16 @@ import { RenewPasswordComponent } from './renew-password/renew-password.componen
     UserLoginStatusComponent,
     RegisterUserComponent,
     ConfirmMailComponent,
-    RenewPasswordComponent
+    RenewPasswordComponent,
+    SearchFiltersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    CollapseModule.forRoot()
   ],
   providers: [
     UserAccountService,
