@@ -9,9 +9,9 @@
           <div *ngFor="let placeItem of placesList[indexOfProvince] let indexOfPlace = index">
             <div *ngIf="indexOfPlace !== 0">
                     <label>
-                        <input type="checkbox" (change)="checkboxChangedRegionParent(placeItem.Id, $event)">
-                    
-                    </label>{{placeItem.Name}}
+                        <input type="checkbox" (change)="checkboxChangedRegionParent(placeItem.Id, $event)" class="css-checkbox" id="{{indexOfPlace + placeItem.Name}}">
+                        <label for="{{indexOfPlace + placeItem.Name}}" name="checkbox1_lbl" class="css-label lite-green-check">{{placeItem.Name}}</label>
+                    </label>
             </div>
           </div>
     </div>
@@ -30,9 +30,9 @@
           <div *ngFor="let priceSetterItem of priceSetterList[indexOfPriceSetterType] let indexOfPriceSetter = index">
             <div *ngIf="indexOfPriceSetter !== 0">
                     <label>
-                        <input type="checkbox" (change)="priceSetterCheckboxChanged(priceSetterItem.Id, $event)">
-                    
-                    </label>{{priceSetterItem.Name}}
+                        <input type="checkbox" (change)="priceSetterCheckboxChanged(priceSetterItem.Id, $event)" class="css-checkbox" id="{{indexOfPriceSetter + priceSetterItem.Name}}">
+                        <label for="{{indexOfPriceSetter + priceSetterItem.Name}}" name="checkbox1_lbl" class="css-label lite-green-check">{{priceSetterItem.Name}}</label>
+                    </label>
             </div>
           </div>
     </div>

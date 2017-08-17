@@ -1,0 +1,12 @@
+<h1>Rezultati iskanja</h1>
+<div class="search-results"
+    data-infinite-scroll
+    debounce
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollUpDistance]="scrollUpDistance"
+    [infiniteScrollThrottle]="throttle"
+    (scrolled)="onScrollDown()">
+      <p *ngFor="let i of array">
+        {{i}}
+      </p>
+</div>

@@ -16,12 +16,14 @@ import { AuthGuard} from './services/accountServices/auth.guard';
 
 import {AlertModule} from 'ngx-bootstrap';
 import {CollapseModule} from 'ngx-bootstrap';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 
 import {UserAccountService} from './services/accountServices/userAccount.service';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { ConfirmMailComponent } from './confirm-mail/confirm-mail.component';
 import { RenewPasswordComponent } from './renew-password/renew-password.component';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { SearchFiltersComponent } from './search-filters/search-filters.componen
     RegisterUserComponent,
     ConfirmMailComponent,
     RenewPasswordComponent,
-    SearchFiltersComponent
+    SearchFiltersComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { SearchFiltersComponent } from './search-filters/search-filters.componen
     HttpModule,
     AppRoutingModule,
     ModalModule.forRoot(),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    InfiniteScrollModule
   ],
   providers: [
     UserAccountService,

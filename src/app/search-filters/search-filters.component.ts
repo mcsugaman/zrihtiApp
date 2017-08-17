@@ -164,7 +164,7 @@ export class SearchFiltersComponent implements OnInit {
     }else if (!event.target.checked){//odstranimo iz liste
       let index = this.selectedPlacesList.indexOf(id);
       if(index !== -1){
-        this.selectedPlacesList.splice(index,1);
+        this.selectedPlacesList.splice(index,1);alert("lol");
       }
     }
     this.refreshSearchList();//OSVEZIMO search listo z novimi filtri
