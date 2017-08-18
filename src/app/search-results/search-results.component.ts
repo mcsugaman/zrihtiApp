@@ -36,7 +36,7 @@ export class SearchResultsComponent implements OnInit {
     this.addItems(startIndex, endIndex, 'unshift');
   }
 
-  onScrollDown(ev){
+  onScrollDown(){
     //dodaj naslednjih 20 itemov
     const start = this.sum;
     this.sum += 20;

@@ -24,7 +24,13 @@ export class SearchFiltersComponent implements OnInit {
   selectedPriceSettersList: Array<string>; //lista ID-jev (COD-ov), ki pove, kateri PriceSetterji so selektani
   selectedPlacesList: Array<string>;
 
+  priceFrom: number;
+  priceTo: number;
+
   constructor() {
+    this.priceFrom = 0;
+    this.priceTo = 9999;
+
     this.priceSetterList = new Array<Array<CheckboxModel>>();//new Array<CheckboxModel>();
     this.selectedPriceSettersList = new Array<string>();
     this.priceSetterCollapsed = new Array<boolean>();
@@ -167,7 +173,7 @@ export class SearchFiltersComponent implements OnInit {
         this.selectedPlacesList.splice(index,1);alert("lol");
       }
     }
-    this.refreshSearchList();//OSVEZIMO search listo z novimi filtri
+    //this.refreshSearchList();//OSVEZIMO search listo z novimi filtri
   }//end checkboxChangedRegionParent
 
 
@@ -180,11 +186,12 @@ export class SearchFiltersComponent implements OnInit {
         this.selectedPriceSettersList.splice(index,1);
       }
     }
-    this.refreshSearchList();//OSVEZIMO search listo z novimi filtri
+    //this.refreshSearchList();//OSVEZIMO search listo z novimi filtri
   }//priceSetterCheckboxChanged
 
 
   refreshSearchList(){
+    alert("priceFrom: " + this.priceFrom + "priceTo:" + this.priceTo);
     //tukaj posljemo vse liste izbranih price setterjev in krajev in ostalih filtrou, da lahko porefresamo listo serviceov,
     //ce v listi izbranih za določen filter ni nobenega izbranega filtra, moramo prikazati vse rezultate
   }//end refreshSearchList

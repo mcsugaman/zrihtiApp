@@ -1,12 +1,47 @@
 .filtersParentLink {
     text-decoration: none;
-    //color: yellow;
+	color: black;
+	font-weight:700; 
     cursor: pointer;
     &:hover {
         cursor: pointer;
     }
 }
 
+.sidebar-menu{
+	background-color: #e8eff4;
+	padding:20px;
+}
+
+.sidebar-menu-section{
+	padding-bottom: 15px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid black;
+}
+
+.sidebar-menu-sub-item{
+	font-size:13px !important;
+}
+
+.price-label{
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.input-price{
+	width:50px;
+	float: left;
+	margin-left: 5px;
+}
+.price-text{
+	float: left;
+	margin-left:5px;
+	font-size: 19px;
+}
+
+.refresh-section{
+	text-align: center;
+}
 //////CUSTOM CHECKBOXES
 /* CSS Created by CSS CHECKBOX */
 /**********************************/

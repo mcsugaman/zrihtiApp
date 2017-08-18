@@ -1,4 +1,5 @@
-<div class="row">
+<div class="sidebar-menu">
+<div class="row sidebar-menu-section">
 <div *ngFor="let provinceItem of placesList; let indexOfProvince = index">
     <a class="filtersParentLink" (click)= "placesCollapsed[indexOfProvince] = !placesCollapsed[indexOfProvince]">
       <span *ngIf="placesCollapsed[indexOfProvince]" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
@@ -8,9 +9,9 @@
     <div [collapse]="placesCollapsed[indexOfProvince]">
           <div *ngFor="let placeItem of placesList[indexOfProvince] let indexOfPlace = index">
             <div *ngIf="indexOfPlace !== 0">
-                    <label>
+                    <label class="sidebar-menu-sub-item">
                         <input type="checkbox" (change)="checkboxChangedRegionParent(placeItem.Id, $event)" class="css-checkbox" id="{{indexOfPlace + placeItem.Name}}">
-                        <label for="{{indexOfPlace + placeItem.Name}}" name="checkbox1_lbl" class="css-label lite-green-check">{{placeItem.Name}}</label>
+                        <label for="{{indexOfPlace + placeItem.Name}}" name="checkbox1_lbl" class="css-label lite-green-check sidebar-menu-sub-item">{{placeItem.Name}}</label>
                     </label>
             </div>
           </div>
@@ -19,7 +20,7 @@
 </div>
 
 
-<div class="row">
+<div class="row sidebar-menu-section">
   <div *ngFor="let priceSetterTypeItem of priceSetterList; let indexOfPriceSetterType = index">
     <a class="filtersParentLink" (click)= "priceSetterCollapsed[indexOfPriceSetterType] = !priceSetterCollapsed[indexOfPriceSetterType]">
       <span *ngIf="priceSetterCollapsed[indexOfPriceSetterType]" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
@@ -31,10 +32,22 @@
             <div *ngIf="indexOfPriceSetter !== 0">
                     <label>
                         <input type="checkbox" (change)="priceSetterCheckboxChanged(priceSetterItem.Id, $event)" class="css-checkbox" id="{{indexOfPriceSetter + priceSetterItem.Name}}">
-                        <label for="{{indexOfPriceSetter + priceSetterItem.Name}}" name="checkbox1_lbl" class="css-label lite-green-check">{{priceSetterItem.Name}}</label>
+                        <label for="{{indexOfPriceSetter + priceSetterItem.Name}}" name="checkbox1_lbl" class="css-label lite-green-check sidebar-menu-sub-item">{{priceSetterItem.Name}}</label>
                     </label>
             </div>
           </div>
     </div>
   </div>
+</div>
+<div class="row sidebar-menu-section">
+  <p class="price-label">Cena</p>
+  <p class="price-text">od</p>
+  <input class="input-price" type="number" [(ngModel)]="priceFrom">
+  <p class="price-text">do</p>
+  <input class="input-price" type="number" [(ngModel)]="priceTo">
+  <p class="price-text">EUR</p>
+</div>
+<div class="refresh-section">
+  <a class="btn btn-success" (click)="refreshSearchList()">Osveži</a>
+</div>
 </div>
