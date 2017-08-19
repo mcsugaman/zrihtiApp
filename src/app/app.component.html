@@ -1,10 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
 <app-user-login-status></app-user-login-status>
+  </div>
+<div class="row">
+<app-main-menu></app-main-menu>
+</div>
 <nav>
   <a routerLink="/home">Home</a>
   <a routerLink="/dashboard">Dashboard</a>
 </nav>
-<div class="jumbotron">
-    <div class="container">
+    <div class="row">
       <div class="col-sm-12">
         <router-outlet></router-outlet>
       </div>

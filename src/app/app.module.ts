@@ -24,6 +24,7 @@ import { ConfirmMailComponent } from './confirm-mail/confirm-mail.component';
 import { RenewPasswordComponent } from './renew-password/renew-password.component';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     ConfirmMailComponent,
     RenewPasswordComponent,
     SearchFiltersComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,

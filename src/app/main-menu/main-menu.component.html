@@ -1,0 +1,18 @@
+<nav id="menu">
+  <label for="tm" id="toggle-menu">Meni <span class="drop-icon">▾</span></label>
+  <input type="checkbox" id="tm">
+  <ul class="main-menu clearfix">
+    <li *ngFor="let mainItem of mainMenuItemsList; let indexOfMainItem = index">
+      <a href="/area/{{mainItem[0].Id}}">{{mainItem[0].Name}} <!-- Tukaj mora bit nujno href, drugace meni na mobilni ne dela -->
+        <span class="drop-icon">▾</span>
+        <label title="" class="drop-icon" for="sm{{mainItem[0].Id}}">▾</label>
+      </a>
+      <input type="checkbox" id="sm{{mainItem[0].Id}}">
+      <ul class="sub-menu">
+        <li *ngFor="let subItem of mainMenuItemsList[indexOfMainItem]; let indexOfSubItem = index">
+          <a *ngIf="indexOfSubItem !== 0" routerLink="/category/{{subItem.Id}}">{{subItem.Name}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

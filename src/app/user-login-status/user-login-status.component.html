@@ -1,4 +1,4 @@
-<div class="row">
+
   <div class="col-lg-10"></div>
   <div *ngIf="user.Username != null" class="col-lg-2">Pozdravljen, {{user.Username}}
     <a class="btn btn-primary" (click)="LogOut()">Odjavi se</a>
@@ -8,7 +8,7 @@
   <div *ngIf="user.Username == null" class="col-lg-2">
     <p>{{NotLoggedInText}}</p><a class="btn btn-primary" (click)="openModal(modalLogin)">{{LogInText}}</a>
   </div>
-</div>
+
 
 <ng-template #modalLogin>
   <div class="modal-header">

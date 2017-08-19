@@ -15,6 +15,8 @@ const routes: Routes = [
   { path: 'registerNewUser', component: RegisterUserComponent },
   { path: 'confirmMail/:email/:hash', component: ConfirmMailComponent },
   { path: 'renewPassword/:email/:hash', component: RenewPasswordComponent},
+  { path: 'area/:id', component: HomeComponent},//To moras se nastavit, je samo narejeno za potrebe menija
+  { path: 'category/:id', component: HomeComponent},//To moras se nastavit, je samo narejeno za potrebe menija
   { path: '**', redirectTo: ''}
 ];
 
