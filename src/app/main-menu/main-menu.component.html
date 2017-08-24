@@ -3,7 +3,7 @@
   <input type="checkbox" id="tm">
   <ul class="main-menu clearfix">
     <li *ngFor="let mainItem of mainMenuItemsList; let indexOfMainItem = index">
-      <a href="/area/{{mainItem[0].Id}}">{{mainItem[0].Name}} <!-- Tukaj mora bit nujno href, drugace meni na mobilni ne dela -->
+      <a href="javascript:void(0)">{{mainItem[0].Name}} <!-- Tukaj mora bit nujno href, drugace meni na mobilni ne dela -->
         <span class="drop-icon">▾</span>
         <label title="" class="drop-icon" for="sm{{mainItem[0].Id}}">▾</label>
       </a>

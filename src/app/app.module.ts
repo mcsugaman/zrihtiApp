@@ -25,6 +25,7 @@ import { RenewPasswordComponent } from './renew-password/renew-password.componen
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { SelectServiceMenuComponent } from './select-service-menu/select-service-menu.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
     RenewPasswordComponent,
     SearchFiltersComponent,
     SearchResultsComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    SelectServiceMenuComponent
   ],
   imports: [
     BrowserModule,

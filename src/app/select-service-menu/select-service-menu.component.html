@@ -1,0 +1,40 @@
+<div class="select-service-main">
+  <div class="row">
+<h2 class="select-service-title">Storitve</h2>
+  </div>
+<div class="row select-service-item-row">
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+  <div class="row">
+    <div class="col-lg-4">
+      <ul class="select-service-list">
+        <ng-container *ngFor="let item of selectServiceItemsList; let indexOfItem = index">
+          <li *ngIf="(indexOfItem >=0) && (indexOfItem < indexToItemsColumnOne)">
+            <a (click)="refreshSelectedService(item.Id)" class="select-service-item" href="javascript:void(0)">{{item.Name}}</a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <ul class="select-service-list">
+        <ng-container *ngFor="let item of selectServiceItemsList; let indexOfItem = index">
+          <li *ngIf="(indexOfItem >= indexToItemsColumnOne) && (indexOfItem < indexToItemsColumnTwo)">
+            <a (click)="refreshSelectedService(item.Id)" class="select-service-item" href="javascript:void(0)">{{item.Name}}</a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+    <div class="col-lg-4">
+      <ul class="select-service-list">
+        <ng-container *ngFor="let item of selectServiceItemsList; let indexOfItem = index">
+          <li *ngIf="(indexOfItem >= indexToItemsColumnTwo) && (indexOfItem < indexToItemsColumnThree)">
+            <a (click)="refreshSelectedService(item.Id)" class="select-service-item" href="javascript:void(0)">{{item.Name}}</a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="col-lg-2"></div>
+</div>
+</div>
