@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {SelectServiceItemModel} from '../models/SelectServiceItemModel';
+import {SelectDropDownItem} from '../models/SelectDropDownItem';
 
 @Component({
   selector: 'app-search-results',
@@ -16,14 +16,15 @@ export class SearchResultsComponent implements OnInit {
   scrollUpDistance = 2;
   direction= '';
 
-  OrderByOptionsList: Array<SelectServiceItemModel>;
-  selectedOrderByOption: SelectServiceItemModel;
+  OrderByOptionsList: Array<SelectDropDownItem>;
+  selectedOrderByOption: SelectDropDownItem;
 
 
   constructor() {
-    this.OrderByOptionsList = new Array<SelectServiceItemModel>();
-    this.selectedOrderByOption = new SelectServiceItemModel();
+    this.OrderByOptionsList = new Array<SelectDropDownItem>();
     this.fillOrderByOptionsList();
+    this.selectedOrderByOption = this.OrderByOptionsList[0];
+    
 
     this.appendItems(0, this.sum);
 
@@ -33,11 +34,11 @@ export class SearchResultsComponent implements OnInit {
   }
 
   fillOrderByOptionsList(){
-    let item: SelectServiceItemModel = new SelectServiceItemModel();
-    item.Id = "1"; item.Name = "po ceni: padajoče"; this.OrderByOptionsList.push(item);
-    item = new SelectServiceItemModel; item.Id = "2"; item.Name = "po ceni: naraščajoče"; this.OrderByOptionsList.push(item);
-    item = new SelectServiceItemModel; item.Id = "3"; item.Name = "po datumu: padajoče"; this.OrderByOptionsList.push(item);
-    item = new SelectServiceItemModel; item.Id = "4"; item.Name = "po datumu: naraščajoče"; this.OrderByOptionsList.push(item);
+    let item: SelectDropDownItem = new SelectDropDownItem();
+    item.value = 1; item.name = "po ceni: padajoče"; this.OrderByOptionsList.push(item);
+    item = new SelectDropDownItem; item.value = 2; item.name = "po ceni: naraščajoče"; this.OrderByOptionsList.push(item);
+    item = new SelectDropDownItem; item.value = 3; item.name = "po datumu: padajoče"; this.OrderByOptionsList.push(item);
+    item = new SelectDropDownItem; item.value = 4; item.name = "po datumu: naraščajoče"; this.OrderByOptionsList.push(item);
   }
 
   addItems(startIndex, endIndex, _method){

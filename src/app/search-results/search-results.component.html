@@ -10,7 +10,7 @@
   <div class="search-results-filters-orders">
     <label>Razvrsti po:</label> 
   <select [(ngModel)]="selectedOrderByOption">
-    <option *ngFor="let option of OrderByOptionsList" value="option.Id">{{option.Name}}</option>
+    <option *ngFor="let option of OrderByOptionsList" [ngValue]="option">{{option.name}}</option>
   </select>
   </div>
 <h1>Rezultati iskanja</h1>
