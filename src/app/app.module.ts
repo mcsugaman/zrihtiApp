@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 /*Bootstrap komponente*/
 import {ModalModule} from 'ngx-bootstrap/modal';
+import {AlertModule} from 'ngx-bootstrap';
+import {CollapseModule} from 'ngx-bootstrap';
+import {BsDropdownModule} from 'ngx-bootstrap';
 //////////////
 
 import { AppComponent } from './app.component';
@@ -14,8 +17,8 @@ import { ContactComponent } from './contact/contact.component';
 import { UserLoginStatusComponent } from './user-login-status/user-login-status.component';
 import { AuthGuard} from './services/accountServices/auth.guard';
 
-import {AlertModule} from 'ngx-bootstrap';
-import {CollapseModule} from 'ngx-bootstrap';
+
+
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 
 import {UserAccountService} from './services/accountServices/userAccount.service';
@@ -48,6 +51,7 @@ import { SelectServiceMenuComponent } from './select-service-menu/select-service
     AppRoutingModule,
     ModalModule.forRoot(),
     CollapseModule.forRoot(),
+    BsDropdownModule.forRoot(),
     InfiniteScrollModule
   ],
   providers: [

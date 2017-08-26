@@ -1,3 +1,18 @@
+<!-- <div class="search-results-filters-orders">
+  <div class="btn-group" dropdown>
+    <button dropdownToggle type="button" class="btn btn-info dropdown-toggle">
+    Button Dropdown<span class="caret"></span>
+    </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+      <li role="menuitem"><a class="dropdown-item">Action</a></li>
+    </ul>
+</div> -->
+  <div class="search-results-filters-orders">
+    <label>Razvrsti po:</label> 
+  <select [(ngModel)]="selectedOrderByOption">
+    <option *ngFor="let option of OrderByOptionsList" value="option.Id">{{option.Name}}</option>
+  </select>
+  </div>
 <h1>Rezultati iskanja</h1>
 <div class="search-results"
     data-infinite-scroll

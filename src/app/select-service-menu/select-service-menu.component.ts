@@ -153,7 +153,7 @@ export class SelectServiceMenuComponent implements OnInit {
   //razporeditev elementov po stolpcih
   calculateColumnItemsDistribution(){
     let numberOfItemsPerColumn = Math.floor(this.selectServiceItemsList.length / 3);
-    let remindPart = this.selectServiceItemsList.length % 3;alert("Remind je: " + remindPart);
+    let remindPart = this.selectServiceItemsList.length % 3;/* alert("Remind je: " + remindPart); */
     if(remindPart == 0){
       this.indexToItemsColumnOne = numberOfItemsPerColumn;
       this.indexToItemsColumnTwo = this.indexToItemsColumnOne + numberOfItemsPerColumn;

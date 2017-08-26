@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {SelectServiceItemModel} from '../models/SelectServiceItemModel';
+
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
@@ -14,12 +16,28 @@ export class SearchResultsComponent implements OnInit {
   scrollUpDistance = 2;
   direction= '';
 
+  OrderByOptionsList: Array<SelectServiceItemModel>;
+  selectedOrderByOption: SelectServiceItemModel;
+
 
   constructor() {
+    this.OrderByOptionsList = new Array<SelectServiceItemModel>();
+    this.selectedOrderByOption = new SelectServiceItemModel();
+    this.fillOrderByOptionsList();
+
     this.appendItems(0, this.sum);
+
    }
 
   ngOnInit() {
+  }
+
+  fillOrderByOptionsList(){
+    let item: SelectServiceItemModel = new SelectServiceItemModel();
+    item.Id = "1"; item.Name = "po ceni: padajoče"; this.OrderByOptionsList.push(item);
+    item = new SelectServiceItemModel; item.Id = "2"; item.Name = "po ceni: naraščajoče"; this.OrderByOptionsList.push(item);
+    item = new SelectServiceItemModel; item.Id = "3"; item.Name = "po datumu: padajoče"; this.OrderByOptionsList.push(item);
+    item = new SelectServiceItemModel; item.Id = "4"; item.Name = "po datumu: naraščajoče"; this.OrderByOptionsList.push(item);
   }
 
   addItems(startIndex, endIndex, _method){
